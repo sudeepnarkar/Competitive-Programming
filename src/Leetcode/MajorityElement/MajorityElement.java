@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.MajorityElement;
 
 import java.util.HashMap;
 
@@ -26,10 +26,4 @@ class MajorityElement {
         return num;
     }
 
-    public static void main(String[] args) {
-
-        int [] arr = {1};
-        System.out.println(majorityElement(arr));
-
-    }
 }

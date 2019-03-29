@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.ToLowerCase;
 
 public class ToLowerCase {
 
@@ -10,9 +10,4 @@ public class ToLowerCase {
         return new String(a);
     }
 
-    public static void main(String[] args) {
-
-        System.out.println(toLowerCase("daVE"));
-
-    }
 }
