@@ -1,7 +1,8 @@
-package Leetcode;
+package Leetcode.SquaresOfSortedArray;
 
+class SquaresOfSortedArray {
 
-/*
+    /*
         Given an array of integers A sorted in non-decreasing order
         return an array of the squares of each number, also in sorted non-decreasing order.
 
@@ -14,7 +15,6 @@ package Leetcode;
         Input: [-7,-3,2,3,11]
         Output: [4,9,9,49,121]*/
 
-class SquaresOfSortedArray {
     public int[] sortedSquares(int[] A) {
         int i = 0;
         int j = A.length-1;

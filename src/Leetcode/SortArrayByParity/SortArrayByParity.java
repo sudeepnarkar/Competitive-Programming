@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.SortArrayByParity;
 
 public class SortArrayByParity {
 
