@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.MissingNumber;
 
 public class MissingNumber {
 

@@ -1,5 +1,6 @@
-package Leetcode;
+package Leetcode.MissingNumber;
 
+import Leetcode.MissingNumber.MissingNumber;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
