@@ -10,32 +10,41 @@ import static org.junit.Assert.assertEquals;
 
 public class IsPalindromeTest {
 
+    ListNode head;
+
+    public void insertNode(int data){
+
+        ListNode node = new ListNode(data);
+        if (head == null){
+            head = node;
+        }else{
+            ListNode n = head;
+            while(n.next!=null){
+                n = n.next;
+            }
+            n.next = node;
+        }
+    }
+
 
     @Test
-    public void isPalindromeTestForPalindrome() {
+    public void isPalindromeTestForPalindromeLinkedList() {
+        //define the linked list values
         int [] arr = new int[]{1,2,2,1};
-
-        ListNode head = new ListNode(arr[0]);
-        ListNode curr = head;
-        head.next = new ListNode(arr[1]);
-        head.next.next = new ListNode(arr[2]);
-        head.next.next.next = new ListNode(arr[3]);
-
-        assertEquals(true, IsPalindrome.isPalindrome(curr));
+        for(int el:arr){
+            insertNode(el);
+        }
+        assertEquals(true, IsPalindrome.isPalindrome(head));
     }
 
     @Test
-    public void isPalindromeTestForNonPalindrome() {
-
-        int [] arr = new int[]{1,1,2,1};
-
-        ListNode head = new ListNode(arr[0]);
-        ListNode curr = head;
-        head.next = new ListNode(arr[1]);
-        head.next.next = new ListNode(arr[2]);
-        head.next.next.next = new ListNode(arr[3]);
-
-        assertEquals(false, IsPalindrome.isPalindrome(curr));
+    public void isPalindromeTestForNonPalindromeLinkedList() {
+        //define the linked list values
+        int [] arr = new int[]{1,2,1,1};
+        for(int el:arr){
+            insertNode(el);
+        }
+        assertEquals(false, IsPalindrome.isPalindrome(head));
     }
 
 }
