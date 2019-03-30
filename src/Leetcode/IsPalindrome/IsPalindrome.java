@@ -8,12 +8,13 @@ import java.util.Stack;
         ListNode next;
         ListNode(int x) {
             val = x;
+            next = null;
     }
   }
 
 public class IsPalindrome {
 
-    public boolean isPalindrome(ListNode head) {
+    public static boolean isPalindrome(ListNode head) {
 
         Stack<ListNode> st = new Stack<>();
         ListNode curr = head;
