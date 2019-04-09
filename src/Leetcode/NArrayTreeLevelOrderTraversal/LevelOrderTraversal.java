@@ -20,9 +20,6 @@ public class LevelOrderTraversal {
         }
     }
 
-    ;
-
-
     public List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> list = new ArrayList<List<Integer>>();
         if (root == null) {
