@@ -14,23 +14,19 @@ public class DeleteDuplicatesFromSortedList {
 
     public ListNode deleteDuplicatesFromSortedList(ListNode head) {
 
-        if (head == null) {
-            return null;
+        if (head == null || head.next == null){
+            return head;
         }
 
         ListNode curr = head;
-        while (curr != null && curr.next != null && curr.val == curr.next.val) {
-            curr.next = curr.next.next;
-        }
-
-        head = curr;
-        while (curr != null && curr.next != null) {
-            if (curr.val == curr.next.val) {
+        while(curr!=null && curr.next!=null){
+            if (curr.val == curr.next.val){
                 curr.next = curr.next.next;
-            } else {
+            }else{
                 curr = curr.next;
             }
         }
+
         return head;
     }
 }

@@ -16,9 +16,25 @@ public class ReverseVowelsOfString {
     Input: "leetcode"
     Output: "leotcede"*/
 
-    public String reverseVowels(String s) {
 
-        ArrayList<Character> list = new ArrayList<Character>(Arrays.asList('a','e','i','o','u','A','E','I','O','U'));
+
+    public static boolean isVowel(char a){
+        switch(a){
+            case ('a') : return true;
+            case ('e') : return true;
+            case ('i') : return true;
+            case ('o') : return true;
+            case ('u') : return true;
+            case ('A') : return true;
+            case ('E') : return true;
+            case ('I') : return true;
+            case ('O') : return true;
+            case ('U') : return true;
+            default : return false;
+        }
+    }
+
+    public String reverseVowels(String s) {
 
         char [] arr = s.toCharArray();
         int i = 0;
@@ -26,17 +42,12 @@ public class ReverseVowelsOfString {
 
         while(i<j){
 
-            if(!list.contains(arr[i])){
+            if(!isVowel(arr[i])){
                 i++;
                 continue;
             }
-            if(!list.contains(arr[j])){
+            if(!isVowel(arr[j])){
                 j--;
-                continue;
-            }
-
-            if(arr[i] == arr[j]){
-                i++;j--;
                 continue;
             }
 

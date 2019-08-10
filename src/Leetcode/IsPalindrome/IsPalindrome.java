@@ -3,14 +3,15 @@ package Leetcode.IsPalindrome;
 import java.util.Stack;
 
 
- class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
+        next = null;
     }
-  }
+}
 
 public class IsPalindrome {
 
@@ -18,13 +19,13 @@ public class IsPalindrome {
 
         Stack<ListNode> st = new Stack<>();
         ListNode curr = head;
-        while(curr!=null){
+        while (curr != null) {
             st.push(curr);
-                    curr = curr.next;
+            curr = curr.next;
         }
 
-        while(!st.isEmpty() || head!=null){
-            if (st.pop().val!=head.val){
+        while (!st.isEmpty() || head != null) {
+            if (st.pop().val != head.val) {
                 return false;
             }
             head = head.next;

@@ -25,21 +25,15 @@ public class NumberDisappearedInArray {
 
     public List<Integer> findDisappearedNumbers(int[] nums) {
 
-        ArrayList<Integer> list = new ArrayList<>();
-        int n = 0;
-        for(int i=0;i<nums.length;i++){
-            n = Math.abs(nums[i])-1;
-            if(nums[n]>0){
-                nums[n] = -nums[n];
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i =0;i<nums.length;i++){
+            int index = Math.abs(nums[i]);
+            if (nums[index-1]<0){
+                list.add(Math.abs(nums[i]));
+            }else{
+                nums[index-1] = -nums[index-1];
             }
         }
-
-        for (int i=0;i<nums.length;i++){
-            if(nums[i]>0){
-                list.add(i+1);
-            }
-        }
-
         return list;
     }
 
