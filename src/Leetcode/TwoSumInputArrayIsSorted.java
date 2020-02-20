@@ -24,7 +24,7 @@ public class TwoSumInputArrayIsSorted {
         int high = numbers.length - 1;
         int sum = 0;
         while (low < high) {
-            sum = numbers[low] + numbers[high])
+            sum = numbers[low] + numbers[high];
             if (sum == target) {
                 res[0] = low + 1;
                 res[1] = high + 1;
