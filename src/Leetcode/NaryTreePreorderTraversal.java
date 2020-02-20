@@ -25,9 +25,9 @@ public class NaryTreePreorderTraversal {
     public List<Integer> preorder(Node root) {
 
         Stack<Node> st = new Stack<>();
-        List<Integer> list = new ArrayList<>();
-        if(root == null){
-            return list;
+            List<Integer> list = new ArrayList<>();
+            if(root == null){
+                return list;
         }
         st.push(root);
         while(st.size()!=0){
