@@ -19,18 +19,20 @@ public class TwoSumInputArrayIsSorted {
     Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.*/
    
     public int[] twoSum(int[] numbers, int target) {
-        int [] res = new int[2];
-        int i = 0;
-        int j = numbers.length-1;
-        while(i<j){
-            if((numbers[i]+numbers[j]) == target){
-                res[0] = i+1;
-                res[1] = j+1;
+        int[] res = new int[2];
+        int low = 0;
+        int high = numbers.length - 1;
+        int sum = 0;
+        while (low < high) {
+            sum = numbers[low] + numbers[high])
+            if (sum == target) {
+                res[0] = low + 1;
+                res[1] = high + 1;
                 break;
-            }else if ((numbers[i]+numbers[j]) < target){
-                i++;
-            }else{
-                j--;
+            } else if (sum < target) {
+                low++;
+            } else {
+                high--;
             }
         }
         return res;
