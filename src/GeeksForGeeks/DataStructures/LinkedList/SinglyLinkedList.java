@@ -5,7 +5,7 @@ public class SinglyLinkedList {
 
     Node head;
 
-    static class Node{
+    static class Node {
 
         Node next;
         int data;
@@ -17,15 +17,17 @@ public class SinglyLinkedList {
     }
 
 
-    /** Insert node at the head of the linked list
+    /**
+     * Insert node at the head of the linked list
+     *
      * @param data The value of the node to be inserted at the head
      */
 
 
-    void push(int data){
+    void push(int data) {
 
         Node node = new Node(data);
-        if (head == null){
+        if (head == null) {
             node = head;
             return;
         }
@@ -36,20 +38,21 @@ public class SinglyLinkedList {
 
     /**
      * Inserting the node at the end of the list
+     *
      * @param data value of the node to be appended
      */
-    void append(int data){
+    void append(int data) {
 
         Node node = new Node(data);
 
-        if (head  == null){
+        if (head == null) {
             head = node;
             return;
         }
 
         Node curr = head;
 
-        while(curr.next!=null){
+        while (curr.next != null) {
             curr = curr.next;
         }
         curr.next = node;
@@ -57,16 +60,16 @@ public class SinglyLinkedList {
 
 
     /**
-     * @param data The data for the node to be created
+     * @param data     The data for the node to be created
      * @param prevNodeVal The prev node value
      */
-    void insertAfter(int data, int prevNodeVal){
+    void insertAfter(int data, int prevNodeVal) {
 
         Node node = new Node(data);
         Node curr = head;
 
-        while(curr.next!=null){
-            if (curr.data == prevNodeVal){
+        while (curr.next != null) {
+            if (curr.data == prevNodeVal) {
                 node.next = curr.next;
                 curr.next = node;
                 return;
@@ -75,31 +78,30 @@ public class SinglyLinkedList {
         }
 
         // The node is to inserted at the end
-        if(curr.next == null){
+        if (curr.next == null) {
             curr.next = node;
         }
     }
-
 
     /**
      * @param data value of the node to be deleted
      */
 
-    void deleteFirstOccurance(float data){
+    void deleteFirstOccurance(int data) {
 
-        if (head.data == data){
+        if (head.data == data) {
             head = head.next;
             return;
         }
 
         Node curr = head;
 
-        while(curr.next!=null){
+        while (curr.next != null) {
 
-            if (curr.next.data == data){
+            if (curr.next.data == data) {
                 curr.next = curr.next.next;
                 return;
-            }else{
+            } else {
                 curr = curr.next;
             }
         }
@@ -109,12 +111,12 @@ public class SinglyLinkedList {
      * printing the linkedlist
      */
 
-    void printLL(){
-        System.out.println("\nPrinting node values:");
+    void printLL() {
+        System.out.println("\nPrinting Singly LinkedList :");
         Node curr = head;
-        while(curr!=null){
+        while (curr != null) {
             System.out.print(curr.data);
-            if(curr.next!= null){
+            if (curr.next != null) {
                 System.out.print("->");
             }
             curr = curr.next;
@@ -126,16 +128,16 @@ public class SinglyLinkedList {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.append(1);
         sll.append(2);
-        sll.append(3);
+        sll.append(4);
         sll.push(0);
 
         sll.printLL();
 
-        sll.insertAfter(4,3);
+        sll.insertAfter(3,2);
 
         sll.printLL();
 
-        sll.deleteFirstOccurance(2);
+        sll.deleteFirstOccurance(3);
 
         sll.printLL();
     }
