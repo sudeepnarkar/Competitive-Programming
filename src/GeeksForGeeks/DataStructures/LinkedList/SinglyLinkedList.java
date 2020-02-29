@@ -110,7 +110,6 @@ public class SinglyLinkedList {
      */
 
     void printLL(){
-git
         System.out.println("\nPrinting node values:");
         Node curr = head;
         while(curr!=null){
