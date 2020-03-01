@@ -5,7 +5,7 @@ public class QueueUsingLinkedList {
     Node front;
     Node rear;
 
-    public class Node{
+    public class Node {
 
         int data;
         Node next;
@@ -16,12 +16,17 @@ public class QueueUsingLinkedList {
         }
     }
 
+    /**
+     * Adding element to the rear of the queue
+     *
+     * @param data element to be added
+     */
 
-    public void enqueue(int data){
+    public void enqueue(int data) {
 
         Node node = new Node(data);
 
-        if (front == null){
+        if (front == null) {
             front = node;
             rear = node;
             return;
@@ -30,12 +35,18 @@ public class QueueUsingLinkedList {
         rear.next = node;
         rear = node;
 
-        System.out.println("Enqueued the node with value "+data);
+        System.out.println("Enqueued the node with value " + data);
     }
 
-    public Node dequeue(){
+    /**
+     * Removing element from the head of the queue
+     *
+     * @return element at the head
+     */
 
-        if(front == null){
+    public Node dequeue() {
+
+        if (front == null) {
             System.out.println("Queue is empty");
             return null;
         }
@@ -43,22 +54,25 @@ public class QueueUsingLinkedList {
         Node node = front;
         front = front.next;
 
-        if (front == null){
+        if (front == null) {
             rear = null;
         }
 
-        System.out.println("Node with value "+node.data+" dequeued from the queue");
+        System.out.println("Node with value " + node.data + " dequeued from the queue");
 
         return node;
-
     }
 
-    public void printQueue(){
+    /**
+     * Printing the queue
+     */
+
+    public void printQueue() {
 
         System.out.println("Printing the values in the queue");
 
         Node curr = front;
-        while(curr!=null){
+        while (curr != null) {
             System.out.println(curr.data);
             curr = curr.next;
         }

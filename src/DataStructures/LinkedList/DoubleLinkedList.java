@@ -60,7 +60,7 @@ public class DoubleLinkedList {
     }
 
     /**
-     * @param data     The data for the node to be created
+     * @param data        The data for the node to be created
      * @param prevNodeVal The prev node value
      */
 

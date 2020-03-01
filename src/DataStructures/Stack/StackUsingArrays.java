@@ -5,37 +5,53 @@ public class StackUsingArrays {
 
     static final int maxSize = 3;
     int top = -1;
-    int [] arr = new int[maxSize];
+    int[] arr = new int[maxSize];
 
-     void push(int num){
+    /**
+     * Push an element into the stack
+     *
+     * @param num value to be pushed onto the stack
+     */
 
-        if (top>=maxSize-1){
+    void push(int num) {
+
+        if (top >= maxSize - 1) {
             System.out.println("Stack overflow");
-        }else{
+        } else {
             arr[++top] = num;
         }
 
-         System.out.println("Pushed " +num+ " to the stack");
+        System.out.println("Pushed " + num + " to the stack");
     }
 
-    int pop(){
+    /**
+     * Pop and element from the stack
+     *
+     * @return value which is popped off
+     */
+
+    int pop() {
 
         System.out.println("Popping value from the stack");
-        if (top<0){
+        if (top < 0) {
             System.out.println("Stack underflow");
             return -1;
-        }else {
+        } else {
             int num = arr[top--];
-            return  num;
+            return num;
         }
     }
 
-    void printStack(){
+    /**
+     * Printing the stack
+     */
+
+    void printStack() {
 
         System.out.println("Printing the stack ..");
-         for(int i = top; i >=0;i--){
-             System.out.println(arr[i]);
-         }
+        for (int i = top; i >= 0; i--) {
+            System.out.println(arr[i]);
+        }
     }
 
     public static void main(String[] args) {

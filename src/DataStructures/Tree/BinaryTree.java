@@ -3,7 +3,7 @@ package GeeksForGeeks.DataStructures.Tree;
 public class BinaryTree {
 
 
-     static class Node{
+    static class Node {
 
         int data;
         Node left;
@@ -17,11 +17,11 @@ public class BinaryTree {
     }
 
     // Inorder travesal of tree nodes
-    void printTreeNodes(Node node){
+    void printTreeNodes(Node node) {
 
-         if (node == null){
-             return;
-         }
+        if (node == null) {
+            return;
+        }
 
         printTreeNodes(node.left);
         System.out.println(node.data);
@@ -36,9 +36,9 @@ public class BinaryTree {
         Node node = new Node(1);
         node.right = new Node(2);
         node.left = new Node(3);
-        node.left.left = new Node(4) ;
+        node.left.left = new Node(4);
 
-        System.out.println( "Printing tree nodes Inorder ..");
+        System.out.println("Printing tree nodes Inorder ..");
 
         b.printTreeNodes(node);
 

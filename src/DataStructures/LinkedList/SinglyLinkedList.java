@@ -60,7 +60,7 @@ public class SinglyLinkedList {
 
 
     /**
-     * @param data     The data for the node to be created
+     * @param data        The data for the node to be created
      * @param prevNodeVal The prev node value
      */
     void insertAfter(int data, int prevNodeVal) {
@@ -133,7 +133,7 @@ public class SinglyLinkedList {
 
         sll.printLL();
 
-        sll.insertAfter(3,2);
+        sll.insertAfter(3, 2);
 
         sll.printLL();
 

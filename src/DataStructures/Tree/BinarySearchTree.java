@@ -20,14 +20,14 @@ public class BinarySearchTree {
 
     Node insertNode(Node root, int val) {
 
-        if (root == null){
+        if (root == null) {
             Node node = new Node(val);
             return node;
         }
 
-        if(val<root.val){
+        if (val < root.val) {
             root.left = insertNode(root.left, val);
-        }else{
+        } else {
             root.right = insertNode(root.right, val);
         }
         return root;
@@ -40,15 +40,15 @@ public class BinarySearchTree {
         }
         if (root.val < val) {
             root.right = deleteNode(root.right, val);
-        } else if (val < root.val){
+        } else if (val < root.val) {
             root.left = deleteNode(root.left, val);
-        }else{
+        } else {
             // This is the node to be deleted.
             //Case 1 : Node has no children
             // Case 2 : Node has one child
-            if (root.left == null){
+            if (root.left == null) {
                 return root.right;
-            }else if (root.right == null){
+            } else if (root.right == null) {
                 return root.left;
             }
 
@@ -56,7 +56,7 @@ public class BinarySearchTree {
 
             root.val = minValue(root.right);
 
-            root.right = deleteNode(root.right,root.val);
+            root.right = deleteNode(root.right, root.val);
         }
 
         return root;
@@ -64,9 +64,9 @@ public class BinarySearchTree {
     }
 
     //Util function to find the in-order successor.
-    int minValue(Node root){
+    int minValue(Node root) {
         int minValue = root.val;
-        while(root.left!=null){
+        while (root.left != null) {
             minValue = root.left.val;
             root = root.left;
         }
@@ -91,9 +91,9 @@ public class BinarySearchTree {
 
         BinarySearchTree bst = new BinarySearchTree();
         bst.root = new Node(4);
-        bst.root =  bst.insertNode(bst.root,2);
-        bst.root =  bst.insertNode(bst.root,12);
-        bst.root = bst.insertNode(bst.root,20);
+        bst.root = bst.insertNode(bst.root, 2);
+        bst.root = bst.insertNode(bst.root, 12);
+        bst.root = bst.insertNode(bst.root, 20);
 
         System.out.println("Printing BST ..");
         bst.printBST(bst.root);
