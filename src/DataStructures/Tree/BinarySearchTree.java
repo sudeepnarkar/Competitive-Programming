@@ -1,4 +1,4 @@
-package GeeksForGeeks.DataStructures.Tree;
+package DataStructures.Tree;
 
 public class BinarySearchTree {
 

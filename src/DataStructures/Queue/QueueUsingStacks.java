@@ -1,4 +1,4 @@
-package GeeksForGeeks.DataStructures.Queue;
+package DataStructures.Queue;
 
 import java.util.Stack;
 

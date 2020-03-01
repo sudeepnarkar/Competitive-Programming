@@ -1,4 +1,4 @@
-package GeeksForGeeks.DataStructures.LinkedList;
+package DataStructures.LinkedList;
 
 public class DoubleLinkedList {
 

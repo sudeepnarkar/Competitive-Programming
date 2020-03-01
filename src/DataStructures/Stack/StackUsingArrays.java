@@ -1,4 +1,4 @@
-package GeeksForGeeks.DataStructures.Stack;
+package DataStructures.Stack;
 
 public class StackUsingArrays {
 
