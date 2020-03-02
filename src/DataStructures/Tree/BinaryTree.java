@@ -18,6 +18,7 @@ public class BinaryTree {
 
     /**
      * Inorder traversal of the binary tree
+     *
      * @param node root node
      */
     void printTreeNodes(Node node) {

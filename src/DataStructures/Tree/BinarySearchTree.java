@@ -17,6 +17,13 @@ public class BinarySearchTree {
         }
     }
 
+    /**
+     * Inserting a node in a Binary search Tree
+     *
+     * @param root root of the tree
+     * @param val  value of the node to be inserted
+     * @return root node of the tree
+     */
 
     Node insertNode(Node root, int val) {
 
@@ -33,6 +40,12 @@ public class BinarySearchTree {
         return root;
     }
 
+    /**
+     * @param root root of the tree
+     * @param val  value of the node to be deleted
+     * @return root node of the tree
+     */
+
     Node deleteNode(Node root, int val) {
 
         if (root == null) {
@@ -44,7 +57,7 @@ public class BinarySearchTree {
             root.left = deleteNode(root.left, val);
         } else {
             // This is the node to be deleted.
-            //Case 1 : Node has no children
+            // Case 1 : Node has no children
             // Case 2 : Node has one child
             if (root.left == null) {
                 return root.right;
@@ -52,7 +65,7 @@ public class BinarySearchTree {
                 return root.left;
             }
 
-            // Node with two children. Find the Inorder successor.
+            // Case 3 : Node with two children. Find the Inorder successor.
 
             root.val = minValue(root.right);
 
@@ -63,7 +76,12 @@ public class BinarySearchTree {
 
     }
 
-    //Util function to find the in-order successor.
+    /**
+     * Utility function to find the in-order successor.
+     *
+     * @param root
+     * @return value of the inorder successor
+     */
     int minValue(Node root) {
         int minValue = root.val;
         while (root.left != null) {
@@ -73,7 +91,11 @@ public class BinarySearchTree {
         return minValue;
     }
 
-    // Print in-order AKA non-descending order.
+    /**
+     * print the tree in-order AKA non-descending order
+     *
+     * @param root
+     */
     void printBST(Node root) {
 
         if (root == null) {
