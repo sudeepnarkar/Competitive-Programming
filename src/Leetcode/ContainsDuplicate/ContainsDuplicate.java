@@ -1,6 +1,6 @@
 package Leetcode.ContainsDuplicate;
 
-import java.util.HashSet;
+import java.util.Arrays;
 
 public class ContainsDuplicate {
 
@@ -17,12 +17,13 @@ public class ContainsDuplicate {
 
 
     public boolean containsDuplicate(int[] nums) {
-        HashSet<Integer> set = new HashSet<>();
-        for(int n:nums){
-            if (set.contains(n)){
+        if (nums == null || nums.length <= 1) {
+            return false;
+        }
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
                 return true;
-            }else{
-                set.add(n);
             }
         }
         return false;
