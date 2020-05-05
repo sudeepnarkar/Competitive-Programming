@@ -4,16 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 class FizzBuzz {
-    public List<String> fizzBuzz(int n) {
+    public static List<String> fizzBuzz(int n) {
         ArrayList<String> list = new ArrayList<>();
-        for(int i=1;i<=n;i++){
-            if(i%3==0 && i%5==0){
+        for (int i = 1; i <= n; i++) {
+            boolean divByThree = i % 3 == 0;
+            boolean divByFive = i % 5 == 0;
+            if (divByThree && divByFive) {
                 list.add("FizzBuzz");
-            }else if(i%3==0){
+            } else if (divByThree) {
                 list.add("Fizz");
-            }else if(i%5==0){
+            } else if (divByFive) {
                 list.add("Buzz");
-            }else{
+            } else {
                 list.add(String.valueOf(i));
             }
         }
