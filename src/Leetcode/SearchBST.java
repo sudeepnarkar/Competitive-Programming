@@ -13,7 +13,7 @@ public class SearchBST {
     You need to find the node in the BST that the node's value equals the given value.
     Return the subtree rooted with that node. If such node doesn't exist, you should return NULL.*/
 
-    public TreeNode searchBST(TreeNode root, int val) {
+    public TreeNode searchBSTRecursive(TreeNode root, int val) {
         if(root == null){
             return null;
         }
@@ -21,10 +21,21 @@ public class SearchBST {
             return root;
         }
         else if (root.val<val){
-            return searchBST(root.right,val);
+            return searchBSTRecursive(root.right,val);
         }else{
-            return searchBST(root.left,val);
+            return searchBSTRecursive(root.left,val);
         }
     }
 
+    public TreeNode searchBSTIterative(TreeNode root, int val) {
+
+        while(root!=null && root.val!=val){
+            if (root.val>val){
+                root = root.left;
+            }else{
+                root = root.right;
+            }
+        }
+        return root;
+    }
 }
