@@ -1,4 +1,4 @@
-package Leetcode.ToLowerCase;
+package Leetcode;
 
 public class ReverseOnlyLetters {
 
