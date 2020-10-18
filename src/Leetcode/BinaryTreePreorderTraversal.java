@@ -19,20 +19,31 @@ public class BinaryTreePreorderTraversal {
 
 //    Given a binary tree, return the preorder traversal of its nodes' values.
 
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversalIterative(TreeNode root) {
         Stack<TreeNode> st = new Stack<>();
         List<Integer> list = new ArrayList<>();
 
-        TreeNode node = root;
-        while (st.size() != 0 || node != null) {
-            while (node != null) {
-                list.add(node.val);
-                st.push(node);
-                node = node.left;
+        while (st.size() != 0 || root != null) {
+            while (root != null) {
+                list.add(root.val);
+                st.push(root);
+                root = root.left;
             }
-            node = st.pop();
-            node = node.right;
+            root = st.pop();
+            root = root.right;
         }
+        return list;
+    }
+
+    List<Integer> list = new ArrayList<>();
+
+    public List<Integer> preorderTraversalRecursive(TreeNode root) {
+        if (root == null) {
+            return list;
+        }
+        list.add(root.val);
+        preorderTraversalRecursive(root.left);
+        preorderTraversalRecursive(root.right);
         return list;
     }
 }
