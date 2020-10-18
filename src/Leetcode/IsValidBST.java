@@ -1,5 +1,7 @@
 package Leetcode;
 
+import java.util.Stack;
+
 public class IsValidBST {
 
 
@@ -24,7 +26,7 @@ public class IsValidBST {
     }
 
 
-    public boolean isValidBST(TreeNode root) {
+    public boolean isValidBSTRecursive(TreeNode root) {
         Long min = Long.MIN_VALUE;
         Long max = Long.MAX_VALUE;
 
@@ -44,5 +46,25 @@ public class IsValidBST {
             return false;
         }
         return isValidBSTUtil(root.left, min, root.val) && isValidBSTUtil(root.right, root.val, max);
+    }
+
+    public boolean isValidBSTIterative(TreeNode root) {
+        long inorder = Long.MIN_VALUE;
+        Stack<TreeNode> st = new Stack<>();
+
+        while (!st.isEmpty() || root != null) {
+            while (root != null) {
+                st.push(root);
+                root = root.left;
+            }
+            // In an inorder traversal of a BST (non-descending order), the previous element cannot be greater than the current
+            root = st.pop();
+            if (root.val <= inorder) {
+                return false;
+            }
+            inorder = root.val;
+            root = root.right;
+        }
+        return true;
     }
 }
