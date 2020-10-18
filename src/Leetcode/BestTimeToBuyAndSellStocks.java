@@ -1,5 +1,6 @@
 package Leetcode;
 
+//https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 public class BestTimeToBuyAndSellStocks {
 
 /*
@@ -17,13 +18,19 @@ public class BestTimeToBuyAndSellStocks {
     Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.*/
 
     public int maxProfit(int[] prices) {
-        int total = 0;
-        for (int i = 0; i < prices.length - 1; i++) {
-            if (prices[i + 1] > prices[i]) {
-                total += prices[i + 1] - prices[i];
-            }
+        if (prices.length == 0 || prices.length == 1) {
+            return 0;
         }
-        return total;
+
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            }
+            maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+        }
+        return maxProfit;
     }
 }
 
