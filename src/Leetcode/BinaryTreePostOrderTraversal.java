@@ -19,7 +19,33 @@ public class BinaryTreePostOrderTraversal {
         }
     }
 
-    // Given a binary tree, return the postorder traversal of its nodes' values.
+    /**
+     * Given the root of a binary tree, return the postorder traversal of its nodes' values.
+     * <p>
+     * Example 1:
+     * <p>
+     * <p>
+     * Input: root = [1,null,2,3]
+     * Output: [3,2,1]
+     * Example 2:
+     * <p>
+     * Input: root = []
+     * Output: []
+     * Example 3:
+     * <p>
+     * Input: root = [1]
+     * Output: [1]
+     * Example 4:
+     * <p>
+     * <p>
+     * Input: root = [1,2]
+     * Output: [2,1]
+     * Example 5:
+     * <p>
+     * <p>
+     * Input: root = [1,null,2]
+     * Output: [2,1]
+     */
 
     List<Integer> list = new ArrayList<>();
 
@@ -37,15 +63,15 @@ public class BinaryTreePostOrderTraversal {
     }
 
     public List<Integer> postorderTraversalIterative(TreeNode root) {
-        LinkedList<Integer> ans = new LinkedList<>();
+        LinkedList<Integer> result = new LinkedList<>();
         Stack<TreeNode> stack = new Stack<>();
         if (root == null) {
-            return ans;
+            return result;
         }
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode cur = stack.pop();
-            ans.addFirst(cur.val);
+            result.addFirst(cur.val);
             if (cur.left != null) {
                 stack.push(cur.left);
             }
@@ -53,6 +79,6 @@ public class BinaryTreePostOrderTraversal {
                 stack.push(cur.right);
             }
         }
-        return ans;
+        return result;
     }
 }
