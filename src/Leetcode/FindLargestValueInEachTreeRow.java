@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+//https://leetcode.com/problems/find-largest-value-in-each-tree-row/
 public class FindLargestValueInEachTreeRow {
 
 
@@ -18,7 +19,30 @@ public class FindLargestValueInEachTreeRow {
         }
     }
 
-    //Find the largest value in each row of a binary tree.
+    /**
+     * Given the root of a binary tree, return an array of the largest value in each row of the tree (0-indexed).
+     * <p>
+     * Example 1:
+     * <p>
+     * Input: root = [1,3,2,5,3,null,9]
+     * Output: [1,3,9]
+     * Example 2:
+     * <p>
+     * Input: root = [1,2,3]
+     * Output: [1,3]
+     * Example 3:
+     * <p>
+     * Input: root = [1]
+     * Output: [1]
+     * Example 4:
+     * <p>
+     * Input: root = [1,null,2]
+     * Output: [1,2]
+     * Example 5:
+     * <p>
+     * Input: root = []
+     * Output: []
+     */
 
     public List<Integer> largestValues(TreeNode root) {
 
@@ -41,9 +65,7 @@ public class FindLargestValueInEachTreeRow {
                 if (node.right != null) {
                     q.offer(node.right);
                 }
-               if(node.val>max){
-                   max = node.val;
-               }
+                max = Math.max(max, node.val);
             }
             list.add(max);
         }
