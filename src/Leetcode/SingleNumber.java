@@ -1,5 +1,11 @@
 package Leetcode;
 
+/**
+ * @author : Sudeep Narkar
+ * @version  : 10/21/2020, Wed, 11:16 PM
+ **/
+
+//https://leetcode.com/problems/single-number/
 public class SingleNumber {
 
     /*Given a non-empty array of integers, every element appears twice except for one. Find that single one.
@@ -17,14 +23,12 @@ public class SingleNumber {
     Input: [4,1,2,1,2]
     Output: 4*/
 
-
     public int singleNumber(int[] nums) {
 
         int num = 0;
-        for(int n:nums){
-            num^=n;
+        for (int n : nums) {
+            num ^= n;
         }
-
         return num;
     }
 }
