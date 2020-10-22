@@ -1,5 +1,11 @@
 package Leetcode.MissingNumber;
 
+/**
+ * @author : Sudeep Narkar
+ * @version : 10/21/2020, Wed, 11:34 PM
+ **/
+
+//https://leetcode.com/problems/missing-number/
 public class MissingNumber {
 
     /*Given an array containing n distinct numbers taken
@@ -16,13 +22,11 @@ public class MissingNumber {
     */
 
     public int missingNumber(int[] nums) {
-        int len = nums.length;
-        int sum = 0;
-        int totalSum = 0;
-        for (int n : nums){
-            sum+=n;
+        long expectedSum = (nums.length * (nums.length + 1)) / 2;
+        long actualSum = 0;
+        for (int n : nums) {
+            actualSum += n;
         }
-        totalSum = (len*(len+1))/2;
-        return totalSum-sum;
+        return (int) (expectedSum - actualSum);
     }
 }
