@@ -1,25 +1,31 @@
 package Leetcode;
 
+/**
+ * @author : Sudeep Narkar
+ * @since : 10/26/2020, Sat, 11:11 PM
+ **/
+
+
+//https://leetcode.com/problems/reverse-only-letters/
 public class ReverseOnlyLetters {
 
 
-    /*Given a string S, return the "reversed" string where all characters that are not a letter stay in the same place, and all letters reverse their positions.
-
-
-
-            Example 1:
-
-    Input: "ab-cd"
-    Output: "dc-ba"
-    Example 2:
-
-    Input: "a-bC-dEf-ghIj"
-    Output: "j-Ih-gfE-dCba"
-    Example 3:
-
-    Input: "Test1ng-Leet=code-Q!"
-    Output: "Qedo1ct-eeLg=ntse-T!"*/
-
+    /**
+     * Given a string S, return the "reversed" string where all characters that are not a letter stay in the same place, and all letters reverse their positions.
+     * <p>
+     * Example 1:
+     * <p>
+     * Input: "ab-cd"
+     * Output: "dc-ba"
+     * Example 2:
+     * <p>
+     * Input: "a-bC-dEf-ghIj"
+     * Output: "j-Ih-gfE-dCba"
+     * Example 3:
+     * <p>
+     * Input: "Test1ng-Leet=code-Q!"
+     * Output: "Qedo1ct-eeLg=ntse-T!"
+     */
 
     public String reverseOnlyLetters(String S) {
 
@@ -33,7 +39,6 @@ public class ReverseOnlyLetters {
                 i++;
                 continue;
             }
-
 
             if (!Character.isLetter(arr[j])) {
                 j--;
