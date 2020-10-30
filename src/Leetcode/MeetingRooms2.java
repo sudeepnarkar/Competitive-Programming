@@ -34,6 +34,7 @@ public class MeetingRooms2 {
 
         PriorityQueue<int[]> pq = new PriorityQueue(intervals.length, (a, b) -> ((int[]) a)[1] - ((int[]) b)[1]);
         for (int[] interval : intervals) {
+            // Check if the next meeting starts after the end of the previous
             // These two meeting can happen in the same room. So poll the that ends earlier
             if (!pq.isEmpty() && pq.peek()[1] <= interval[0]) {
                 pq.poll();
