@@ -1,6 +1,7 @@
 package DataStructures.Trie;
 
 import com.sun.org.apache.xml.internal.utils.Trie;
+import org.junit.Assert;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -92,14 +93,59 @@ public class TrieUsingHashMap {
         return searchRec(node, word, index + 1);
     }
 
+    boolean isDeletedSuccessfully;
+
+    public boolean deleteWord(String word) {
+        isDeletedSuccessfully = false;
+        deleteWordRecursive(root, word, 0);
+        return isDeletedSuccessfully;
+    }
+
+    private boolean deleteWordRecursive(TrieNode root, String word, int index) {
+
+        if (word.length() == index) {
+            // check if the word to delete exists
+            if (root.isWord == false) {
+                return false;
+            }
+            // word can be deleted successfully
+            isDeletedSuccessfully = true;
+            root.isWord = false;
+            // check if the node is candidate for deletion
+            return root.children.size() == 0;
+        }
+
+        char ch = word.charAt(index);
+        TrieNode node = root.children.get(ch);
+
+        // A char of the word does not exist. Word cannot be deleted
+        if (node == null) {
+            return false;
+        }
+
+        boolean deleteNode = deleteWordRecursive(node, word, index + 1);
+
+        if (deleteNode) {
+            // delete the child node with no children
+            root.children.remove(ch);
+            // return to check the current node should be deleted
+            return root.children.size() == 0;
+        }
+
+        return false;
+    }
+
 
     public static void main(String[] args) {
 
         TrieUsingHashMap trieUsingHashMap = new TrieUsingHashMap();
-        trieUsingHashMap.insertWordRecursive("ab");
         trieUsingHashMap.insertWordRecursive("abc");
-        System.out.println(trieUsingHashMap.searchRecursive("abc")); // true
-        System.out.println(trieUsingHashMap.searchRecursive("abcd")); // false
+        trieUsingHashMap.insertWordRecursive("abcde");
 
+        Assert.assertEquals(trieUsingHashMap.searchRecursive("abc"), true);
+        Assert.assertEquals(trieUsingHashMap.searchRecursive("abcd"), false);
+        Assert.assertEquals(trieUsingHashMap.deleteWord("a"), false);
+        Assert.assertEquals(trieUsingHashMap.deleteWord("abc"), true);
+        Assert.assertEquals(trieUsingHashMap.deleteWord("b"), false);
     }
 }
