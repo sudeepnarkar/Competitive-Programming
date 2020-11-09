@@ -1,5 +1,6 @@
 package Leetcode;
 
+//https://leetcode.com/problems/valid-palindrome
 public class ValidPalindrome {
     /**
      * Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
@@ -10,6 +11,7 @@ public class ValidPalindrome {
      * <p>
      * Input: "A man, a plan, a canal: Panama"
      * Output: true
+     * <p>
      * Example 2:
      * <p>
      * Input: "race a car"
@@ -51,6 +53,4 @@ public class ValidPalindrome {
         }
         return false;
     }
-
-
 }
