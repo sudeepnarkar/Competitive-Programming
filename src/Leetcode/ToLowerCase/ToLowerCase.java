@@ -1,30 +1,46 @@
 package Leetcode.ToLowerCase;
 
+/**
+ * @author : Sudeep Narkar
+ * @version : 11/10/2020, Tue, 07:08 AM
+ **/
+
+
+//https://leetcode.com/problems/to-lower-case/
 public class ToLowerCase {
 
-    public static String toLowerCase(String str) {
-        /*char[] a = str.toCharArray();
-        for (int i = 0; i < a.length; i++)
-            if ('A' <= a[i] && a[i] <= 'Z')
-                a[i] = (char) (a[i] - 'A' + 'a');
-        return new String(a);*/
+    /**
+     * Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
+     * <p>
+     * <p>
+     * <p>
+     * Example 1:
+     * <p>
+     * Input: "Hello"
+     * Output: "hello"
+     * <p>
+     * Example 2:
+     * <p>
+     * Input: "here"
+     * Output: "here"
+     * <p>
+     * Example 3:
+     * <p>
+     * Input: "LOVELY"
+     * Output: "lovely"
+     */
 
-        char [] arr = new char[str.length()];
-        for(int i =0;i<str.length();i++){
-            int ch = (int)(str.charAt(i));
-            if (ch<=90 && ch>=65){
-                arr[i] = (char)(ch+32);
-            }else{
-                arr[i] = (char)ch;
+    public static String toLowerCase(String str) {
+
+        char[] arr = new char[str.length()];
+        for (int i = 0; i < str.length(); i++) {
+            int ch = (int) (str.charAt(i));
+            if (ch <= 90 && ch >= 65) {
+                arr[i] = (char) (ch + 32);
+            } else {
+                arr[i] = (char) ch;
             }
         }
         return String.valueOf(arr);
-
     }
-
-    public static void main(String[] args) {
-
-        System.out.println(toLowerCase("Hello"));
-    }
-
 }
