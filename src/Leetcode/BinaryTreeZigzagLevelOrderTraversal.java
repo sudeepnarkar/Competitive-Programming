@@ -2,49 +2,75 @@ package Leetcode;
 
 import java.util.*;
 
+/**
+ * @author : Sudeep Narkar
+ * @since : 11/13/2020, Fri, 08:00 PM
+ **/
+
+//https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal
 public class BinaryTreeZigzagLevelOrderTraversal {
 
 
     public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-
-    //Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> list = new ArrayList<List<Integer>>();
-        if(root == null){
-            return list;
+        TreeNode(int x) {
+            val = x;
         }
-        Queue<TreeNode>q = new LinkedList<>();
+    }
+
+
+    /**
+     * Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+     * <p>
+     * For example:
+     * Given binary tree [3,9,20,null,null,15,7],
+     * <p>
+     * 3
+     * / \
+     * 9  20
+     * /  \
+     * 15   7
+     * <p>
+     * return its zigzag level order traversal as:
+     * <p>
+     * [
+     * [3],
+     * [20,9],
+     * [15,7]
+     * ]
+     */
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return res;
+        }
+        Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
-        int size = 0;
-        int flag = 0;
-        while(q.size()!=0){
-            size = q.size();
-            List<Integer> buff = new ArrayList<>();
-            for(int i=0; i<size;i++){
+        boolean even = true;
+        while (q.size() != 0) {
+            ArrayList<Integer> list = new ArrayList<>();
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
                 TreeNode node = q.remove();
-                if(node.left!=null){
+                if (node.left != null) {
                     q.offer(node.left);
                 }
-                if(node.right!=null){
+                if (node.right != null) {
                     q.offer(node.right);
                 }
-                buff.add(node.val);
+                list.add(node.val);
             }
-            if (flag == 1){
-                Collections.reverse(buff);
-                list.add(buff);
-            }else{
-                list.add(buff);
+
+            if (!even) {
+                Collections.reverse(list);
             }
-            //flipping the flag
-            flag = flag ==0?1:0;
+            even = !even;
+            res.add(list);
         }
-        return list;
+        return res;
     }
 }
