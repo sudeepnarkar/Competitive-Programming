@@ -1,5 +1,11 @@
 package Leetcode;
 
+/**
+ * @author : Sudeep Narkar
+ * @since : 11/16/2020, Mon, 8:45 PM
+ **/
+
+//https://leetcode.com/problems/reverse-linked-list/
 public class ReverseLinkedList {
 
 
@@ -12,12 +18,17 @@ public class ReverseLinkedList {
         }
     }
 
-    /*Reverse a singly linked list.
-
-            Example:
-
-    Input: 1->2->3->4->5->NULL
-    Output: 5->4->3->2->1->NULL*/
+    /**
+     * Reverse a singly linked list.
+     * <p>
+     * Example:
+     * <p>
+     * Input: 1->2->3->4->5->NULL
+     * Output: 5->4->3->2->1->NULL
+     *
+     * @param head
+     * @return Head of the reversed linked list
+     */
 
     public ListNode reverseList(ListNode head) {
 
@@ -30,6 +41,7 @@ public class ReverseLinkedList {
             prev = head;
             head = next;
         }
+
         return prev;
     }
 }
