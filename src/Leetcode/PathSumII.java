@@ -74,12 +74,15 @@ public class PathSumII {
         }
         sList.add(root.val);
         if (root.left == null && root.right == null && root.val == sum) {
+            // found path. Add it to return list
             list.add(new ArrayList<>(sList));
         } else {
             pathSumUtil(root.left, sum - root.val);
             pathSumUtil(root.right, sum - root.val);
 
         }
+
+        // backtrack and remove the last item added
         int size = sList.size();
         sList.remove(size - 1);
 
