@@ -87,8 +87,7 @@ public class TrieUsingHashMap {
         char ch = word.charAt(index);
         TrieNode node = root.children.get(ch);
         if (node == null) {
-            node = new TrieNode();
-            root.children.put(ch, node);
+            return false;
         }
         return searchRec(node, word, index + 1);
     }
