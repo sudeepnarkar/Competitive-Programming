@@ -57,6 +57,22 @@ public class FibonacciNumber {
         return curr;
     }
 
+    // Time Complexity = O(N)
+    // Space Complexity = O(N+1) = O(N)
+    public int fibDPBottomUp(int N) {
+
+        if (N <= 1) {
+            return N;
+        }
+
+        int[] arr = new int[N + 1];
+        arr[1] = 1;
+        for (int i = 2; i <= N; i++) {
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+        return arr[N];
+    }
+
     // Time Complexity = O(2^N)
     // Space Complexity = O(N)  - counting the recursion stack
     public int fibRecursive(int N) {
