@@ -24,8 +24,8 @@ public class AddStrings {
      * @return string representing sum of num1 and num2.
      */
 
-    // Time Complexity O(N+M) where N and M are the lengths of num1 and num2 respectively.
-    // Space Complexity = 0(N) or O(M) based on the longest length
+    // Time Complexity O(max(N, M)) where N and M are the lengths of num1 and num2 respectively.
+    // Space Complexity = O(max(N, M)) where N and M are the lengths of num1 and num2 respectively.
     public String addStrings(String num1, String num2) {
 
         int i = num1.length() - 1;
