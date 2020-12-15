@@ -45,14 +45,18 @@ public class AddTwoNumbers {
      * Output: [8,9,9,9,0,0,0,1]
      */
 
+    // Time Complexity = O(max(M,N)) where M and N are the length of the two linked lists
+    // Space Complexity = O(max(M,N))+1 where M and N are the length of the two linked lists
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-        ListNode preHead = new ListNode(-1);
-        ListNode curr = preHead;
-        int sum = 0;
-
+        // sentinal node
+        ListNode head = new ListNode(-100);
+        ListNode curr = head;
+        int sum;
+        int carry = 0;
         while (l1 != null || l2 != null) {
-
+            sum = 0;
+            sum += carry;
             if (l1 != null) {
                 sum += l1.val;
                 l1 = l1.next;
@@ -62,13 +66,13 @@ public class AddTwoNumbers {
                 l2 = l2.next;
             }
             curr.next = new ListNode(sum % 10);
-            sum = sum > 9 ? 1 : 0;
             curr = curr.next;
+            carry = sum / 10;
         }
-        if (sum == 1) {
+        // append the carry if present
+        if (carry == 1) {
             curr.next = new ListNode(1);
         }
-
-        return preHead.next;
+        return head.next;
     }
 }
