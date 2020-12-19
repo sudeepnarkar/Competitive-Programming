@@ -2,6 +2,7 @@ package Leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -49,30 +50,44 @@ public class FindAllAnagramsInAString {
      */
 
     // Time Complexity = O(N) where N is the length of the String S
-    // Space Complexity = O(1)
+    // Space Complexity = O(N) here N is the length of the String S
     public List<Integer> findAnagrams(String s, String p) {
 
         List<Integer> list = new ArrayList<>();
-        if (p == null || s == null || p.length() == 0 || s.length() == 0 || p.length() > s.length()) {
-            return list;
-        }
 
-        int sLen = s.length();
-        int pLen = p.length();
-        //maintain the frequency count
-        int[] sArr = new int[26];
-        int[] pArr = new int[26];
-        for (char c : p.toCharArray()) {
-            pArr[c - 'a']++;
+        // Create Character Frequency Map for s
+        HashMap<Character, Integer> charsToFillMap = new HashMap<>();
+        for (char pChar : p.toCharArray()) {
+            charsToFillMap.put(pChar, charsToFillMap.getOrDefault(pChar, 0) + 1);
         }
+        int counter = charsToFillMap.size();
+        int left = 0;
+        int right = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            if (i >= pLen) {
-                sArr[s.charAt(i - pLen) - 'a']--;
+        // Two pointer approach
+        while (right < s.length()) {
+            char sChar = s.charAt(right);
+            if (charsToFillMap.containsKey(sChar)) {
+                charsToFillMap.put(sChar, charsToFillMap.get(sChar) - 1);
+                if (charsToFillMap.get(sChar) == 0) {
+                    counter--;
+                }
             }
-            sArr[s.charAt(i) - 'a']++;
-            if (Arrays.equals(sArr, pArr)) {
-                list.add(i - pLen + 1);
+            right++;
+            // All chars required for permutation are covered if counter =0
+            while (counter == 0) {
+                sChar = s.charAt(left);
+                if (charsToFillMap.containsKey(sChar)) {
+                    charsToFillMap.put(sChar, charsToFillMap.get(sChar) + 1);
+                    if (charsToFillMap.get(sChar) > 0) {
+                        counter++;
+                    }
+                }
+                // check if the permutation exists, if yes add start index
+                if ((right - left) == p.length()) {
+                    list.add(left);
+                }
+                left++;
             }
         }
         return list;
