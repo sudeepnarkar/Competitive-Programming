@@ -27,43 +27,37 @@ public class RotateString {
      */
 
     // Time complexity = O (N) where N is the length of A.
-    // Space complexity = O (N) i.e = N strings are created to compare with B along with N recusrion stack.
+    // Space complexity = O (N) i.e = N strings are created to compare with B along with N recursion stack.
     public boolean rotateString(String A, String B) {
 
 
-        if (A.length() != B.length()) {
+        if(A.length() != B.length()){
             return false;
         }
 
-        if (A.equals("") && B.equals("")) {
+        if(A.equals(B)){
             return true;
         }
-
 
         char ch = A.charAt(0);
-        int len = A.length();
         StringBuilder sb = new StringBuilder();
-        sb.append(A.substring(1, len));
-        sb.append(ch);
-        String temp = A;
-        return checkString(sb.toString(), temp, B);
+        sb.append(A.substring(1)).append(ch);
+        return checkString(sb.toString(), A, B);
     }
 
-    public boolean checkString(String A, String temp, String B) {
+    public boolean checkString(String temp, String A, String B){
 
-        if (temp.equals(A)) {
+        if(temp.equals(A)){
             return false;
         }
-        if (A.equals(B)) {
+        if(temp.equals(B)){
             return true;
         }
-        int len = A.length();
+        char ch = temp.charAt(0);
         StringBuilder sb = new StringBuilder();
-        sb.append(A.substring(1, len));
-        sb.append(A.charAt(0));
-        return checkString(sb.toString(), temp, B);
+        sb.append(temp.substring(1)).append(ch);
+        return  checkString(sb.toString(), A, B);
     }
-
 
     // Time complexity = O (N*M) where N is the length of A and M is the length of B. contains uses a brute force algo with time complexity O(N*M)
     // Space complexity = O(N), space used to build A+A
