@@ -52,7 +52,7 @@ public class DetermineIfStringHalvesAreAlike {
      */
 
     // Time Complexity = O(N),where N is the length of N
-    // Time Complexity = O(1), the space complexity for a set to store vowels is constant.
+    // Space Complexity = O(1), the space complexity for a set to store vowels is constant.
     public boolean halvesAreAlike(String s) {
 
         int len = s.length();
