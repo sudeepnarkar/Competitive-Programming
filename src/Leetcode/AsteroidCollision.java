@@ -56,6 +56,14 @@ public class AsteroidCollision {
     // Space Complexity = O(N)
     public int[] asteroidCollision(int[] asteroids) {
 
+        /**
+         * Case 1: The current number is positive, push onto stack
+         * Case 2: If the current number is negative, it can be one of the following cases:
+         *       Case 2.1 : If the top is positive and greater than the absolute of current number, pop from stack
+         *       Case 2.1 : If the top is negative, push onto stack
+         *       Case 2.1 : If the top is equal to current, pop from stack
+         */
+
         Stack<Integer> st = new Stack<>();
         for (int n : asteroids) {
             if (n > 0) {
