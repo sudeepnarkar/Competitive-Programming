@@ -21,7 +21,8 @@ public class BinarySearch {
      * Explanation: 2 does not exist in nums so return -1
      */
 
-
+    //Time Complexity = O(LogN), where N is the length of nums
+    //Space Complexity = O(1)
     public int search(int[] nums, int target) {
 
         int low = 0;
