@@ -17,34 +17,35 @@ public class BinaryTreeInorderTraversal {
     }
 
     /**
-     *
      * Given the root of a binary tree, return the inorder traversal of its nodes' values.
-     *
+     * <p>
      * Example 1:
-     *
-     *
+     * <p>
+     * <p>
      * Input: root = [1,null,2,3]
      * Output: [1,3,2]
      * Example 2:
-     *
+     * <p>
      * Input: root = []
      * Output: []
      * Example 3:
-     *
+     * <p>
      * Input: root = [1]
      * Output: [1]
      * Example 4:
-     *
-     *
+     * <p>
+     * <p>
      * Input: root = [1,2]
      * Output: [2,1]
      * Example 5:
-     *
-     *
+     * <p>
+     * <p>
      * Input: root = [1,null,2]
      * Output: [1,2]
-
      */
+
+    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Space Complexity = O(N), where N is the number of nodes in the tree
     public List<Integer> inorderTraversalIterative(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root == null) {
@@ -66,6 +67,8 @@ public class BinaryTreeInorderTraversal {
 
     List<Integer> list = new ArrayList<>();
 
+    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Space Complexity = O(N), where N is the number of nodes in the tree considering the recursion stack
     public List<Integer> inorderTraversalRecursive(TreeNode root) {
 
         if (root == null) {
