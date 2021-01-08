@@ -24,6 +24,8 @@ public class MeetingRooms2 {
      * Output: 1
      */
 
+    //Time Complexity = O(N), where N is the length of intervals
+    //Space Complexity = O(N), where N is the length of intervals
     public int minMeetingRooms(int[][] intervals) {
 
         if (intervals == null || intervals.length == 0) {
