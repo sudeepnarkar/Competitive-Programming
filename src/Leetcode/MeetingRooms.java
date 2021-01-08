@@ -23,6 +23,8 @@ public class MeetingRooms {
      * Output: true
      */
 
+    //Time Complexity = O(N), where N is the length of intervals
+    //Time Complexity = O(1)
     public boolean canAttendMeetings(int[][] intervals) {
 
         Arrays.sort(intervals, (int[] o1, int[] o2) -> o1[0] - o2[0]);
