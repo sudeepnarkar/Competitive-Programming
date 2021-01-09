@@ -18,6 +18,8 @@ public class ValidPalindrome {
      * Output: false
      */
 
+    //Time Complexity = O(N), where N is the length of S
+    //Space Complexity = O(1)
     public boolean isPalindrome(String s) {
 
         if (s.equals("")) {
