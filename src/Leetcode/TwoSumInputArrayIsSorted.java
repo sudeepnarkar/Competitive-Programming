@@ -37,6 +37,8 @@ public class TwoSumInputArrayIsSorted {
      * Output: [1,2]
      */
 
+    //Time Complexity = O(LogN), where N is the length of numbers
+    //Space Complexity = O(1)
     public int[] twoSum(int[] numbers, int target) {
 
         int low = 0;
