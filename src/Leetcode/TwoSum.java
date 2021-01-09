@@ -32,6 +32,8 @@ public class TwoSum {
      * Output: [0,1]
      */
 
+    //Time Complexity = O(N), where N is the length of nums
+    //Space Complexity = O(N), where N is the length of nums
     public int[] twoSum(int[] nums, int target) {
 
         int[] res = new int[2];
