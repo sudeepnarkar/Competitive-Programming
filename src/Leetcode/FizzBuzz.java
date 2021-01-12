@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * @author : Sudeep Narkar
- * @version   : 10/22/2020, Sun, 8:56 AM
+ * @version : 10/22/2020, Sun, 8:56 AM
  **/
 
 //https://leetcode.com/problems/fizz-buzz/
@@ -39,6 +39,9 @@ class FizzBuzz {
      * "FizzBuzz"
      * ]
      */
+
+    //Time Complexity = O(N)
+    //Space Complexity = O(1)
     public static List<String> fizzBuzz(int n) {
         ArrayList<String> list = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
