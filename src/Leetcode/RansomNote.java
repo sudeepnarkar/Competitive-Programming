@@ -27,7 +27,8 @@ public class RansomNote {
      * Output: true
      */
 
-
+    //Time Complexity = O(Math.max(M,N)), where M and N is length of ransomeNote and magazine respectively
+    //Space Complexity = O(1)
     public boolean canConstruct(String ransomNote, String magazine) {
 
         int[] arr = new int[26];
