@@ -25,6 +25,8 @@ public class Intersection {
      * Output: [9,4]
      */
 
+    //Time Complexity = O(N+M), where N is the length of nums1 and M is the length of nums2
+    //Time Complexity = O(N+M), where N is the length of nums1 and M is the length of nums2
     public int[] intersection(int[] nums1, int[] nums2) {
 
         HashSet<Integer> set = new HashSet<>();
