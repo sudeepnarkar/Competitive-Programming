@@ -33,6 +33,8 @@ public class TopKFrequentElements {
      */
 
 
+    //Time Complexity = O(NlogN), where N is the length of nums
+    //Space Complexity = O(N), where N is the length of nums
     public int[] topKFrequent(int[] nums, int k) {
 
         Map<Integer, Integer> map = new HashMap<>();
@@ -51,8 +53,6 @@ public class TopKFrequentElements {
         for (int i = 0; i < k; i++) {
             arr[i] = heap.poll();
         }
-
         return arr;
     }
-
 }
