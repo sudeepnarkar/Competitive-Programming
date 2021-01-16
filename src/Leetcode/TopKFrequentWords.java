@@ -31,6 +31,8 @@ public class TopKFrequentWords {
      * with the number of occurrence being 4, 3, 2 and 1 respectively.
      */
 
+    //Time Complexity = O(NlogN), where N is the length of words
+    //Space Complexity = O(N), where N is the length of words
     public List<String> topKFrequent(String[] words, int k) {
 
         Map<String, Integer> map = new HashMap<>();
