@@ -1,6 +1,7 @@
 package Leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -49,18 +50,24 @@ public class BinaryTreePreorderTraversal {
      * Output: [1,2]
      */
 
+    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Space Complexity = O(N), where N is the number of nodes in the tree
     public List<Integer> preorderTraversalIterative(TreeNode root) {
+        List<Integer> list = new LinkedList<>();
+        if (root == null) {
+            return list;
+        }
         Stack<TreeNode> st = new Stack<>();
-        List<Integer> list = new ArrayList<>();
-
-        while (st.size() != 0 || root != null) {
-            while (root != null) {
-                list.add(root.val);
-                st.push(root);
-                root = root.left;
+        st.push(root);
+        while (st.size() != 0) {
+            TreeNode node = st.pop();
+            list.add(node.val);
+            if (node.right != null) {
+                st.push(node.right);
             }
-            root = st.pop();
-            root = root.right;
+            if (node.left != null) {
+                st.push(node.left);
+            }
         }
         return list;
     }
