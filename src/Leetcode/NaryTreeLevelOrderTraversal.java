@@ -49,6 +49,9 @@ public class NaryTreeLevelOrderTraversal {
      * Output: [[1],[2,3,4,5],[6,7,8,9,10],[11,12,13],[14]]
      */
 
+
+    //Time Complexity = O(N), where N is the number of nodes in a tree
+    //Space Complexity = O(N), where N is the number of nodes in a tree
     public List<List<Integer>> levelOrder(Node root) {
 
         List<List<Integer>> list = new ArrayList<List<Integer>>();
