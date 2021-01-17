@@ -74,6 +74,9 @@ public class BinaryTreePreorderTraversal {
 
     List<Integer> list = new ArrayList<>();
 
+
+    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Space Complexity = O(N), where N is the number of nodes in the tree considering the recursion stack
     public List<Integer> preorderTraversalRecursive(TreeNode root) {
         if (root == null) {
             return list;
