@@ -47,21 +47,9 @@ public class BinaryTreePostOrderTraversal {
      * Output: [2,1]
      */
 
-    List<Integer> list = new ArrayList<>();
 
-    public List<Integer> postorderTraversalRecursive(TreeNode root) {
-
-        if (root == null) {
-            return list;
-        }
-
-        postorderTraversalRecursive(root.left);
-        postorderTraversalRecursive(root.right);
-        list.add(root.val);
-        return list;
-
-    }
-
+    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Space Complexity = O(N), where N is the number of nodes in the tree
     public List<Integer> postorderTraversalIterative(TreeNode root) {
         LinkedList<Integer> result = new LinkedList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -80,5 +68,19 @@ public class BinaryTreePostOrderTraversal {
             }
         }
         return result;
+    }
+
+    List<Integer> list = new ArrayList<>();
+
+    public List<Integer> postorderTraversalRecursive(TreeNode root) {
+
+        if (root == null) {
+            return list;
+        }
+
+        postorderTraversalRecursive(root.left);
+        postorderTraversalRecursive(root.right);
+        list.add(root.val);
+        return list;
     }
 }
