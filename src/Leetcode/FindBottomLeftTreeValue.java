@@ -48,6 +48,8 @@ public class FindBottomLeftTreeValue {
      * @return value of the boot left node
      */
 
+    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Space Complexity = O(N)(worst case), or the level with the maximum level in Tree
     public int findBottomLeftValue(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
