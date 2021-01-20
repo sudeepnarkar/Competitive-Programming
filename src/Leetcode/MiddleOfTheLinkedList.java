@@ -45,6 +45,8 @@ public class MiddleOfTheLinkedList {
      * Since the list has two middle nodes with values 3 and 4, we return the second one.
      */
 
+    //Time Complexity = O(N), where N is the length of the Linked List
+    //Space Complexity = O(1)
     public ListNode middleNode(ListNode head) {
 
         ListNode fast = head;
