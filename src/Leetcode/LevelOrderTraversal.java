@@ -2,29 +2,8 @@ package Leetcode;
 
 import java.util.*;
 
+//https://leetcode.com/problems/binary-tree-level-order-traversal-ii
 public class LevelOrderTraversal {
-
-
-
-/*
-
-    Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
-
-    For example:
-    Given binary tree [3,9,20,null,null,15,7],
-            3
-            / \
-            9  20
-            /  \
-            15   7
-
-            return its bottom-up level order traversal as:
-            [
-            [15,7],
-            [9,20],
-            [3]
-            ]
-*/
 
 
     public class TreeNode {
@@ -37,6 +16,30 @@ public class LevelOrderTraversal {
         }
     }
 
+
+    /**
+     * Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
+     * <p>
+     * For example:
+     * Given binary tree [3,9,20,null,null,15,7],
+     * 3
+     * / \
+     * 9  20
+     * /  \
+     * 15   7
+     * return its bottom-up level order traversal as:
+     * [
+     * [15,7],
+     * [9,20],
+     * [3]
+     * ]
+     *
+     * @param root
+     * @return the bottom-up level order traversal of its nodes' values
+     */
+
+    //Time Complexity = O(NLogN), where N is the number of nodes in the tree
+    //Space Complexity = O(N)
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
 
         List<List<Integer>> list = new ArrayList<List<Integer>>();
