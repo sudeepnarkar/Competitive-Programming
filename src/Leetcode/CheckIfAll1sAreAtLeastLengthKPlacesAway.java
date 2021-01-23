@@ -31,7 +31,8 @@ public class CheckIfAll1sAreAtLeastLengthKPlacesAway {
      * Output: true
      */
 
-
+    //Time Complexity = O(N)
+    //Space Complexity = O(1)
     public boolean kLengthApart(int[] nums, int k) {
         int index = 0;
         boolean firstOne = false;
