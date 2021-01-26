@@ -37,6 +37,8 @@ public class FindTheDifference {
      * Output: "a"
      */
 
+    //Time Complexity = O(N+M), where N and M is the length of s and t respectively
+    //Space Complexity = O(1)
     public char findTheDifference(String s, String t) {
 
         if (s.equals("")) {
