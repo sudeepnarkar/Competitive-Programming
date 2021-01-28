@@ -32,7 +32,8 @@ public class ContainsDuplicate {
      * Output: true
      */
 
-
+    //Time Complexity = O(N), where N is the length of nums
+    //Space Complexity = O(N), where N is the length of nums
     public boolean containsDuplicate(int[] nums) {
         HashSet<Integer> set = new HashSet<>();
 
