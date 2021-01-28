@@ -41,6 +41,9 @@ public class AverageOfLevels {
      * The average value of nodes on level 0 is 3,  on level 1 is 14.5, and on level 2 is 11. Hence return [3, 14.5, 11].
      */
 
+
+    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Time Complexity = O(N), where N is the number of nodes in the tree
     public List<Double> averageOfLevels(TreeNode root) {
         List<Double> list = new ArrayList<>();
         if (root == null) {
