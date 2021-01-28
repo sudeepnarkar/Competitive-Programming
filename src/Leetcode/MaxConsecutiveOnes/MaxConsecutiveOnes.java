@@ -19,6 +19,8 @@ public class MaxConsecutiveOnes {
      * The maximum number of consecutive 1s is 3.
      */
 
+    //Time Complexity = O(N), where N is the size of nums
+    //Space Complexity = O(1)
     public int findMaxConsecutiveOnes(int[] nums) {
         int count = 0;
         int max = 0;
