@@ -36,7 +36,7 @@ public class DefangingAnIPAddress {
      */
 
     //Time Complexity = O(N), where N is the length of address
-    //Space Complexity = O(1)
+    //Space Complexity = O(N), where N is the length of address
     public String defangIPaddr(String address) {
 
         StringBuilder sb = new StringBuilder();
