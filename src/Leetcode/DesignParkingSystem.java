@@ -46,7 +46,7 @@ public class DesignParkingSystem {
     //Time Complexity = O(1)
     //Time Complexity = O(N)
     int[] arr;
-    public ParkingSystem(int big, int medium, int small) {
+    public boolean parkingSystem(int big, int medium, int small) {
         arr = new int[]{big, medium, small};
     }
 
