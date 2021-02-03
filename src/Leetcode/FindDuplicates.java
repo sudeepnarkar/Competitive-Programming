@@ -25,15 +25,22 @@ public class FindDuplicates {
      */
 
     // Time Complexity = O(N), where N is the length of nums
-    // Time Complexity = O(N/2), where N is the length of nums
+    // Space Complexity = O(N), where N is the length of nums
     public List<Integer> findDuplicates(int[] nums) {
-        ArrayList<Integer> list = new ArrayList<>();
+
+        /**
+         * negate all nums at index nums[i]
+         * If a number is already negative, then add it's index+1 in
+         * the result list as it is a duplicate
+         */
+
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
-            int index = Math.abs(nums[i]);
-            if (nums[index - 1] < 0) {
-                list.add(index);
+            int index = Math.abs(nums[i]) - 1;
+            if (nums[index] < 0) {
+                list.add(index + 1);
             } else {
-                nums[index - 1] = -nums[index - 1];
+                nums[index] = -nums[index];
             }
         }
         return list;
