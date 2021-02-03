@@ -29,9 +29,12 @@ public class NumberDisappearedInArray {
      */
 
 
+    //Time Complexity = O(N), where N is the length of nums
+    //Space Complexity = O(N), where N is the length of nums
     public List<Integer> findDisappearedNumbers(int[] nums) {
 
         List<Integer> list = new ArrayList<>();
+
         for (int i = 0; i < nums.length; i++) {
             int index = Math.abs(nums[i]) - 1;
             if (nums[index] > 0) {
@@ -45,6 +48,5 @@ public class NumberDisappearedInArray {
             }
         }
         return list;
-
     }
 }
