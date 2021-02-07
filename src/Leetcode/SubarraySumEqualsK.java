@@ -1,6 +1,5 @@
 package Leetcode;
 
-import java.sql.Time;
 import java.util.HashMap;
 
 /**
@@ -38,12 +37,19 @@ public class SubarraySumEqualsK {
      */
 
     //Time Complexity = O(N), where N is the length of nums array
-    // Space Complexity k= O(N), where N is the length of nums array
+    // Space Complexity = O(N), where N is the length of nums array
     public int subarraySum(int[] nums, int k) {
         int count = 0;
         HashMap<Integer, Integer> preSumMap = new HashMap<>();
         preSumMap.put(0, 1);
         int runningSum = 0;
+
+        /**
+         * Calculate the running sum at every index and store frequency in preSum Map
+         * Check the contiguous array sum by runningSum - k and check the it's frequency
+         * in the map and add it to count
+         */
+
         for (int i = 0; i < nums.length; i++) {
             runningSum += nums[i];
             if (preSumMap.containsKey(runningSum - k)) {
