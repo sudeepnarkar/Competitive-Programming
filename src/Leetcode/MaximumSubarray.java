@@ -39,6 +39,10 @@ public class MaximumSubarray {
     //Space Complexity = O(1)
     public int maxSubArray(int[] nums) {
 
+        if(nums == null || nums.length == 0){
+            throw  new IllegalArgumentException("Input array is empty or null");
+        }
+
         int max = nums[0];
         int maxSoFar = nums[0];
 
