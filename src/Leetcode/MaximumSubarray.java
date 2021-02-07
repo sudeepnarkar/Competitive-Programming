@@ -44,7 +44,7 @@ public class MaximumSubarray {
         }
 
         int max = nums[0];
-        int maxSoFar = nums[0];
+        int maxTillHere = nums[0];
 
         /**
          * Kadane's Algorithm:
@@ -52,8 +52,8 @@ public class MaximumSubarray {
          * Keep track of max in max variable
          */
         for (int i = 1; i < nums.length; i++) {
-            maxSoFar = Math.max(maxSoFar + nums[i], nums[i]);
-            max = Math.max(max, maxSoFar);
+            maxTillHere = Math.max(maxTillHere + nums[i], nums[i]);
+            max = Math.max(max, maxTillHere);
         }
 
         return max;
