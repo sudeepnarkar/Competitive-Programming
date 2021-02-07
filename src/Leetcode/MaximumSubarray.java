@@ -35,10 +35,18 @@ public class MaximumSubarray {
      * Output: -2147483647
      */
 
+    //Time Complexity = O(N), where N is the length of nums
+    //Space Complexity = O(1)
     public int maxSubArray(int[] nums) {
 
         int max = nums[0];
         int maxSoFar = nums[0];
+
+        /**
+         * Kadane's Algorithm:
+         * Max sum at index i is max of nums[i] and maxSoFar + nums[i]
+         * Keep track of max in max variable
+         */
         for (int i = 1; i < nums.length; i++) {
             maxSoFar = Math.max(maxSoFar + nums[i], nums[i]);
             max = Math.max(max, maxSoFar);
