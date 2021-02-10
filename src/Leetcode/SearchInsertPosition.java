@@ -2,7 +2,7 @@ package Leetcode;
 
 //https://leetcode.com/problems/search-insert-position
 public class SearchInsertPosition {
-    
+
     /**
      * Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
      * <p>
@@ -42,8 +42,8 @@ public class SearchInsertPosition {
      * @return insert position for the target
      */
 
-    // Time Complexity = O(logn), as it is Binary Search
-    // Space Compplexity = O(1), no extra space
+    // Time Complexity = O(LogN), where N is the length of nums
+    // Space Complexity = O(1)
     public int searchInsert(int[] nums, int target) {
 
         int low = 0;
