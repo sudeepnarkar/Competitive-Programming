@@ -53,24 +53,22 @@ public class SortArrayByIncreasingFrequency {
             freqMap.put(n, freqMap.getOrDefault(n, 0) + 1);
         }
 
-        //sorting condition implementation
         PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>
-                ((e1, e2) -> e1.getValue() == e2.getValue() ? e2.getKey() - e1.getKey() : e1.getValue() - e2.getValue());
+                ((e1, e2) -> e1.getValue() != e2.getValue() ? e1.getValue() - e2.getValue() : e2.getKey() - e1.getKey());
 
         for (Map.Entry<Integer, Integer> e : freqMap.entrySet()) {
             pq.add(e);
         }
 
-        int[] resArr = new int[nums.length];
         int index = 0;
         while (!pq.isEmpty()) {
             int freq = pq.peek().getValue();
             int key = pq.peek().getKey();
             pq.poll();
             for (int i = 0; i < freq; i++) {
-                resArr[index++] = key;
+                nums[index++] = key;
             }
         }
-        return resArr;
+        return nums;
     }
 }
