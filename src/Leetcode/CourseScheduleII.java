@@ -48,52 +48,68 @@ public class CourseScheduleII {
      * @param prerequisites
      * @return array with the topological order of courses or an empty array if a cyclic dependency exist
      */
+
+    //Time Complexity = O(N), where N is the length of prerequisites
+    //Space Complexity = O(N), where N is the length of prerequisites
     public int[] findOrder(int numCourses, int[][] prerequisites) {
 
-        HashMap<Integer, List<Integer>> adjListMap = new HashMap<>();
-        int[] indegree = new int[numCourses];
 
-        // Build queue and indegree array
-        for (int[] preArr : prerequisites) {
-            List<Integer> list = adjListMap.getOrDefault(preArr[1], new ArrayList<Integer>());
-            list.add(preArr[0]);
-            adjListMap.put(preArr[1], list);
-            indegree[preArr[0]]++;
+        // HashMap will have key as the pre - req course and the value (list) as the dependent courses
+        HashMap<Integer, List<Integer>> adjMap = new HashMap<>();
+        // In degree of a course will represent the number of pre-req for that course
+        int[] indegree = new int[numCourses];
+        for (int[] pre : prerequisites) {
+            List<Integer> list = adjMap.get(pre[1]);
+            if (list == null) {
+                list = new ArrayList<Integer>();
+            }
+            list.add(pre[0]);
+            adjMap.put(pre[1], list);
+            indegree[pre[0]]++;
         }
 
-        Queue<Integer> queue = new LinkedList<>();
-
-        // insert courses in queue with zero indegree (prerequisites)
+        //Add courses whose in degree is zero as they are the one with no pre-reqs and can be taken
+        Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < indegree.length; i++) {
             if (indegree[i] == 0) {
-                queue.offer(i);
+                q.offer(i);
             }
         }
 
-        int index = 0;
-        int[] order = new int[numCourses];
+        int[] res = new int[numCourses];
+
+        //count to represent the number of courses that can be taken
         int count = 0;
-        while (!queue.isEmpty()) {
-            int course = queue.poll();
-            count++;
-            order[index++] = course;
-            if (!adjListMap.containsKey(course)) {
+        while (!q.isEmpty()) {
+
+            int course = q.remove();
+            res[count++] = course;
+
+            List<Integer> childrenList = adjMap.get(course);
+
+            if (childrenList == null) {
                 continue;
             }
-            List<Integer> childList = adjListMap.get(course);
+
             /**
-             * Explore child nodes and decrement their indegree by one.
-             * Check if for any node if the indegree is zero, if yes add
-             * it to the queue.
+             * Explore child course nodes and decrement their indegree by one because the prereq is explored.
+             * Check if for any course node if the indegree is zero, if yes add
+             * it to the queue because that course can be taken
              */
-            for (int i = 0; i < childList.size(); i++) {
-                int child = childList.get(i);
-                if (--indegree[child] == 0) {
-                    queue.offer(child);
+
+            for (int i = 0; i < childrenList.size(); i++) {
+                int childCourse = childrenList.get(i);
+                indegree[childCourse]--;
+                if (indegree[childCourse] == 0) {
+                    q.offer(childCourse);
                 }
             }
         }
-        // return the order if all courses can be finished or an empty array if a cyclic dependency exist
-        return count == numCourses ? order : new int[0];
+
+        /**
+         * check if the count is equal to numcourses to check whether all courses can be taken.
+         * If yes, return the order of the courses else return an empty array if cyclic dependency exists
+         */
+        return count == numCourses ? res : new int[]{};
     }
 }
