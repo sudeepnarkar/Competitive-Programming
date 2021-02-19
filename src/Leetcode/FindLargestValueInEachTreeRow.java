@@ -22,28 +22,48 @@ public class FindLargestValueInEachTreeRow {
     /**
      * Given the root of a binary tree, return an array of the largest value in each row of the tree (0-indexed).
      * <p>
+     * <p>
+     * <p>
+     * <p>
+     * <p>
      * Example 1:
      * <p>
      * Input: root = [1,3,2,5,3,null,9]
      * Output: [1,3,9]
+     * <p>
      * Example 2:
      * <p>
      * Input: root = [1,2,3]
      * Output: [1,3]
+     * <p>
      * Example 3:
      * <p>
      * Input: root = [1]
      * Output: [1]
+     * <p>
      * Example 4:
      * <p>
      * Input: root = [1,null,2]
      * Output: [1,2]
+     * <p>
      * Example 5:
      * <p>
      * Input: root = []
      * Output: []
+     * <p>
+     * <p>
+     * <p>
+     * Constraints:
+     * <p>
+     * The number of nodes in the tree will be in the range [0, 104].
+     * -231 <= Node.val <= 231 - 1
+     *
+     * @param root
+     * @return an array of the largest value in each row of the tree (0-indexed)
      */
 
+    //Time Complexity = O(N), where N is the size of all nodes in the tree
+    //Space Complexity = O(N) where N is the size of all nodes in the tree worst case (1)
     public List<Integer> largestValues(TreeNode root) {
 
         List<Integer> list = new ArrayList<>();
