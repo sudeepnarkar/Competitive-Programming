@@ -59,4 +59,50 @@ class FizzBuzz {
         }
         return list;
     }
+
+    public List<String> fizzBuzzV2(int n) {
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            String d = "";
+            if (i % 3 == 0) {
+                d += "Fizz";
+            }
+            if (i % 5 == 0) {
+                d += "Buzz";
+            }
+            if (!d.equals("")) {
+                list.add(d);
+            } else {
+                list.add(String.valueOf(i));
+            }
+        }
+        return list;
+    }
+
+    public List<String> fizzBuzzV3(int n) {
+        ArrayList<String> list = new ArrayList<>();
+        int c3 = 0;
+        int c5 = 0;
+        String d = "";
+        for (int i = 1; i <= n; i++) {
+            c3++;
+            c5++;
+            if (c3 == 3) {
+                d += "Fizz";
+                c3 = 0;
+            }
+            if (c5 == 5) {
+                d += "Buzz";
+                c5 = 0;
+            }
+
+            if (!d.equals("")) {
+                list.add(d);
+                d = "";
+            } else {
+                list.add(String.valueOf(i));
+            }
+        }
+        return list;
+    }
 }
