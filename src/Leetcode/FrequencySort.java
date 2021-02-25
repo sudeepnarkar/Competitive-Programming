@@ -2,63 +2,72 @@ package Leetcode;
 
 import java.util.*;
 
+//https://leetcode.com/problems/sort-characters-by-frequency
 public class FrequencySort {
 
-   /* Given a string, sort it in decreasing order based on the frequency of characters.
+    /**
+     * Given a string, sort it in decreasing order based on the frequency of characters.
+     * <p>
+     * Example 1:
+     * <p>
+     * Input:
+     * "tree"
+     * <p>
+     * Output:
+     * "eert"
+     * <p>
+     * Explanation:
+     * 'e' appears twice while 'r' and 't' both appear once.
+     * So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
+     * <p>
+     * Example 2:
+     * <p>
+     * Input:
+     * "cccaaa"
+     * <p>
+     * Output:
+     * "cccaaa"
+     * <p>
+     * Explanation:
+     * Both 'c' and 'a' appear three times, so "aaaccc" is also a valid answer.
+     * Note that "cacaca" is incorrect, as the same characters must be together.
+     * <p>
+     * Example 3:
+     * <p>
+     * Input:
+     * "Aabb"
+     * <p>
+     * Output:
+     * "bbAa"
+     * <p>
+     * Explanation:
+     * "bbaA" is also a valid answer, but "Aabb" is incorrect.
+     * Note that 'A' and 'a' are treated as two different characters.
+     *
+     * @param s
+     * @return
+     */
 
-            Example 1:
-
-    Input:
-            "tree"
-
-    Output:
-            "eert"
-
-    Explanation:
-            'e' appears twice while 'r' and 't' both appear once.
-            So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
-            Example 2:
-
-    Input:
-            "cccaaa"
-
-    Output:
-            "cccaaa"
-
-    Explanation:
-    Both 'c' and 'a' appear three times, so "aaaccc" is also a valid answer.
-    Note that "cacaca" is incorrect, as the same characters must be together.
-*/
-
-    //  faster than 91.55% of Java online submissions for Sort Characters By Frequency.
+    //Time Complexity = O(N), where N is the length of S
+    //Space Complexity = O(N), where N is the length of S
     public static String frequencySort(String s) {
 
-        HashMap<Character, Integer> map = new HashMap<>();
-
-        for(char c:s.toCharArray()){
+        if (s == null || s.equals("")) {
+            return s;
+        }
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : s.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
-
-        List<Map.Entry<Character,Integer>> list = new ArrayList<Map.Entry<Character, Integer>>(map.entrySet());
-
-        Collections.sort(list, new Comparator<Map.Entry<Character, Integer>>() {
-            @Override
-            public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
-                return (o2.getValue().compareTo(o1.getValue()));
+        PriorityQueue<Map.Entry<Character, Integer>> pq = new PriorityQueue<>((n1, n2) -> n2.getValue() - n1.getValue());
+        pq.addAll(map.entrySet());
+        StringBuilder sb = new StringBuilder();
+        while (!pq.isEmpty()) {
+            Map.Entry entry = pq.poll();
+            //add character according to their frequencies
+            for (int i = 0; i < (int) entry.getValue(); i++) {
+                sb.append(entry.getKey());
             }
-        });
-
-        StringBuilder sb= new StringBuilder();
-        int count;
-        char c;
-        for(Map.Entry<Character,Integer> entry:list){
-             c = entry.getKey();
-             count = entry.getValue();
-            while(count>=1){
-                sb.append(c);
-                count--;
-            }
-
         }
         return sb.toString();
     }
