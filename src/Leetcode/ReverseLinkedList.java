@@ -30,6 +30,8 @@ public class ReverseLinkedList {
      * @return Head of the reversed linked list
      */
 
+    //Time Complexity = O(N), where N is the length of the linked list
+    //Space Complexity = O(1)
     public ListNode reverseList(ListNode head) {
 
         ListNode prev = null;
