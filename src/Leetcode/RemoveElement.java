@@ -45,6 +45,8 @@ public class RemoveElement {
      * Explanation: Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4. Note that the order of those five elements can be arbitrary. It doesn't matter what values are set beyond the returned length.
      */
 
+    //Time Complexity = O(N), where N is the length of nums
+    //Space Complexity = O(1)
     public int removeElement(int[] nums, int val) {
 
         int index = 0;
