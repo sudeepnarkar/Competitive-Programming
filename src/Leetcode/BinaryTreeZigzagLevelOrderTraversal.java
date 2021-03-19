@@ -42,6 +42,9 @@ public class BinaryTreeZigzagLevelOrderTraversal {
      * [15,7]
      * ]
      */
+
+    //Time Complexity = O(N + N(LogN)), where N is the total number nodes in a tree
+    //Space Complexity = O(N), where N is the total number nodes in a tree
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
