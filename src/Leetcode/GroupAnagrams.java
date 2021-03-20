@@ -33,6 +33,8 @@ public class GroupAnagrams {
      * Output: [["a"]]
      */
 
+    //Time Complexity = O(N) + O(MLogM), where N is the length of strs and M is the average length of string in strs
+    //Space Complexity = O(N), where N is the length of strs
     public List<List<String>> groupAnagrams(String[] strs) {
 
         List<List<String>> groupAnagramsList = new ArrayList<>();
