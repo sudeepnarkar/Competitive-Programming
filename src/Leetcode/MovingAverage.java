@@ -51,7 +51,7 @@ class MovingAverage {
      * movingAverage.next(5); // return 6.0 = (10 + 3 + 5) / 3
      *
      * @param val
-     * @return
+     * @return the moving average of the data stream of the given size
      */
 
     //Time Complexity = O(N), where N is the length of the data stream
