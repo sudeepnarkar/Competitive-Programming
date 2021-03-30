@@ -46,6 +46,8 @@ public class CheckIfTwoStringArraysAreEquivalent {
      * @return true if Strings are equivalent and false if they are not.
      */
 
+    //Time Complexity = O(M+N), where M and N are the length of word1 and word2 respectively
+    //Space Complexity = O(M+N), where M and N are the length of word1 and word2 respectively
     public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
 
         StringBuilder sb1 = new StringBuilder();
