@@ -60,6 +60,8 @@ class FizzBuzz {
         return list;
     }
 
+    //Time Complexity = O(N)
+    //Space Complexity = O(1)
     public List<String> fizzBuzzV2(int n) {
         ArrayList<String> list = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
@@ -79,6 +81,8 @@ class FizzBuzz {
         return list;
     }
 
+    //Time Complexity = O(N)
+    //Space Complexity = O(1)
     public List<String> fizzBuzzV3(int n) {
         ArrayList<String> list = new ArrayList<>();
         int c3 = 0;
