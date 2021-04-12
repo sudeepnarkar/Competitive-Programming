@@ -46,6 +46,8 @@ public class ValidParentheses {
      * Output: true
      */
 
+    //Time Complexity = O(N), where N is the length of the String s
+    //Space Complexity = O(N), where N is the length of the String s
     public boolean isValid(String s) {
 
         Stack<Character> st = new Stack<>();
@@ -57,12 +59,11 @@ public class ValidParentheses {
             } else if (c == '[') {
                 st.push(']');
             } else {
-                if (st.size() == 0 || st.pop() != c) {
+                if (st.isEmpty() || st.pop() != c) {
                     return false;
                 }
             }
         }
-        return st.size() == 0;
-
+        return st.isEmpty();
     }
 }
