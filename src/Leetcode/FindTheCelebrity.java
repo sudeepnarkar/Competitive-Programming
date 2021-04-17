@@ -8,7 +8,7 @@ import java.util.List;
  * @since : 11/13/2020, Fri, 7:38 AM
  **/
 
-//https://leetcode.com/problems/find-the-celebrity
+//https://leetcode.com/problems/find-the-celebrity/
 public class FindTheCelebrity {
 
     /**
@@ -33,27 +33,28 @@ public class FindTheCelebrity {
      * Explanation: There is no celebrity.
      */
 
-    //TODO: Optimize the solution to O(n) time complexity
+    /* The knows API is defined in the parent class Relation.
+      boolean knows(int a, int b); */
+
+    //Time Complexity = O(N)
+    //Space Complexity = O(N)
     public int findCelebrity(int n) {
-        List<Integer> potentialCeleb = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            int count = 0;
-            int everyOneKnowsCeleb = 0;
-            for (int j = 0; j < n; j++) {
-                if (i == j) {
-                    continue;
-                }
-                if (knows(i, j)) {
-                    count++;
-                }
-                if (knows(j, i)) {
-                    everyOneKnowsCeleb++;
-                }
-            }
-            if (count == 0 && everyOneKnowsCeleb == (n - 1)) {
-                return i;
+
+        int candidate = 0;
+        //If A know B, then A is not the celebrity so check B
+        //Find the celebrity candidate
+        for(int i = 1; i<n;i++){
+            if(knows(candidate,i)){
+                candidate = i;
             }
         }
-        return -1;
+
+        //Make sure the celebrity candidate does not know anybody and everyone knows the celebrity canddidate
+        for(int i = 0; i<n;i++){
+            if((i!=candidate && knows(candidate,i)) || !knows(i,candidate)){
+                return -1;
+            }
+        }
+        return candidate;
     }
 }

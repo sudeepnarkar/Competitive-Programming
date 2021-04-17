@@ -29,8 +29,8 @@ public class IntersectionOfTwoArraysII {
      * @return intersection of two arrays
      */
 
-    // Time Complexity = O(n)
-    // Space Complexity = O(n)
+    // Time Complexity = O(N+M), where N and M are the lengths of N and M respectively
+    // Space Complexity = O(N+M), where N and M are the lengths of N and M respectively
     public int[] intersect(int[] nums1, int[] nums2) {
 
         ArrayList<Integer> list = new ArrayList<>();

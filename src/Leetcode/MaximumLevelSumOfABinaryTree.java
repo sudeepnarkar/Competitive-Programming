@@ -52,6 +52,8 @@ public class MaximumLevelSumOfABinaryTree {
      * Output: 2
      */
 
+    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Time Complexity = O(M), where M is the maximum number of nodes in a level
     public int maxLevelSum(TreeNode root) {
 
         int level = 0;
@@ -62,10 +64,11 @@ public class MaximumLevelSumOfABinaryTree {
 
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
+        int sum = 0;
         int maxSum = Integer.MIN_VALUE;
         while (q.size() != 0) {
             int size = q.size();
-            int sum = 0;
+            sum = 0;
             for (int i = 0; i < size; i++) {
                 TreeNode node = q.remove();
                 if (node.left != null) {

@@ -1,7 +1,7 @@
 package Leetcode;
 
 //https://leetcode.com/problems/valid-anagram
-public class IsAnangram {
+public class IsAnagram {
 
 
     /**
@@ -27,7 +27,7 @@ public class IsAnangram {
 
 
     //Time Complexity = O(N), where N is the length of S
-    //Space Complexity = O(N),where N is the length of S
+    //Space Complexity = O(1)
     public boolean isAnagram(String s, String t) {
 
         if (s.length() != t.length()) {

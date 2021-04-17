@@ -69,19 +69,16 @@ public class NextGreaterNodeInLinkedList {
 
         List<Integer> list = new ArrayList<>();
         ListNode curr = head;
-        int size = 0;
         //get size of linked list and convert in an arraylist
         while (curr != null) {
             list.add(curr.val);
             curr = curr.next;
-            size++;
         }
 
-        int[] res = new int[size];
+        int[] res = new int[list.size()];
         Stack<Integer> st = new Stack<>();
         for (int i = 0; i < list.size(); i++) {
-
-            //store the index of smaller elems in stack, pop from stack when larger elem occurs
+            //store the index of smaller elements in stack, pop from stack when larger element occurs
             while (!st.isEmpty() && list.get(st.peek()) < list.get(i)) {
                 res[st.pop()] = list.get(i);
             }

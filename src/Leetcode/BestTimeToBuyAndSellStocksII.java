@@ -35,6 +35,8 @@ public class BestTimeToBuyAndSellStocksII {
      * Explanation: In this case, no transaction is done, i.e. max profit = 0.
      */
 
+    //Time Complexity = O(N), where N is the length of prices
+    //Space Complexity = O(1)
     public int maxProfit(int[] prices) {
         int maxProfit = 0;
         for (int i = 1; i < prices.length; i++) {

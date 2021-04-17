@@ -1,5 +1,9 @@
 package Leetcode;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 //https://leetcode.com/problems/reverse-vowels-of-a-string
 public class ReverseVowelsOfString {
 
@@ -19,7 +23,7 @@ public class ReverseVowelsOfString {
      * Note:
      * The vowels does not include the letter "y".
      *
-     * @param a
+     * @param s
      * @return string which reverses only the vowels of a string.
      */
 
@@ -28,53 +32,27 @@ public class ReverseVowelsOfString {
     public String reverseVowels(String s) {
 
         char[] arr = s.toCharArray();
-        int i = 0;
-        int j = arr.length - 1;
+        int low = 0;
+        int high = s.length() - 1;
 
-        while (i < j) {
+        Set<Character> set = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
 
-            if (!isVowel(arr[i])) {
-                i++;
+        while (low < high) {
+            if (!set.contains(arr[low])) {
+                low++;
                 continue;
             }
-            if (!isVowel(arr[j])) {
-                j--;
+            if (!set.contains(arr[high])) {
+                high--;
                 continue;
             }
+            char temp = arr[low];
+            arr[low] = arr[high];
+            arr[high] = temp;
 
-            char temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            i++;
-            j--;
+            low++;
+            high--;
         }
         return String.valueOf(arr);
-    }
-
-    public static boolean isVowel(char a) {
-        switch (a) {
-            case ('a'):
-                return true;
-            case ('e'):
-                return true;
-            case ('i'):
-                return true;
-            case ('o'):
-                return true;
-            case ('u'):
-                return true;
-            case ('A'):
-                return true;
-            case ('E'):
-                return true;
-            case ('I'):
-                return true;
-            case ('O'):
-                return true;
-            case ('U'):
-                return true;
-            default:
-                return false;
-        }
     }
 }
