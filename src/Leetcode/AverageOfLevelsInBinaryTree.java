@@ -1,4 +1,4 @@
-package Leetcode.AverageOfLevelsInBinaryTree;
+package Leetcode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -7,44 +7,28 @@ import java.util.Queue;
 
 /**
  * @author : Sudeep Narkar
- * @since : 11/10/2020, Tue, 6:47 AM
+ * @since : 4/18/21, Sun, 10:17 PM
  **/
 
-
-//https://leetcode.com/problems/average-of-levels-in-binary-tree
-public class AverageOfLevels {
-
+//https://leetcode.com/problems/average-of-levels-in-binary-tree/
+public class AverageOfLevelsInBinaryTree {
 
     public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
         }
     }
 
-    /**
-     * Given a non-empty binary tree, return the average value of the nodes on each level in the form of an array.
-     * <p>
-     * Example 1:
-     * <p>
-     * Input:
-     * 3
-     * / \
-     * 9  20
-     * /  \
-     * 15   7
-     * Output: [3, 14.5, 11]
-     * Explanation:
-     * The average value of nodes on level 0 is 3,  on level 1 is 14.5, and on level 2 is 11. Hence return [3, 14.5, 11].
-     */
-
-
-    //Time Complexity = O(N), where N is the number of nodes in the tree
-    //Time Complexity = O(N), where N is the number of nodes in the tree
+    //Time Complexity = O(N), where N is the number of nodes in a tree
+    //Space Complexity = O(N), where N is the number of nodes in a tree
     public List<Double> averageOfLevels(TreeNode root) {
+
         List<Double> list = new ArrayList<>();
         if (root == null) {
             return list;
