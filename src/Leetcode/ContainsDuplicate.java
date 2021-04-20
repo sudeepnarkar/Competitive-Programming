@@ -1,35 +1,41 @@
-package Leetcode.ContainsDuplicate;
+package Leetcode;
 
 import java.util.HashSet;
 
 /**
  * @author : Sudeep Narkar
- * @since : 11/10/2020, Tue, 6:47 AM
+ * @since : 4/19/21, Mon, 10:27 PM
  **/
 
 //https://leetcode.com/problems/contains-duplicate/
 public class ContainsDuplicate {
 
-
     /**
-     * Given an array of integers, find if the array contains any duplicates.
+     * Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
      * <p>
-     * Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+     * <p>
      * <p>
      * Example 1:
      * <p>
-     * Input: [1,2,3,1]
+     * Input: nums = [1,2,3,1]
      * Output: true
-     * <p>
      * Example 2:
      * <p>
-     * Input: [1,2,3,4]
+     * Input: nums = [1,2,3,4]
      * Output: false
-     * <p>
      * Example 3:
      * <p>
-     * Input: [1,1,1,3,3,4,3,2,4,2]
+     * Input: nums = [1,1,1,3,3,4,3,2,4,2]
      * Output: true
+     * <p>
+     * <p>
+     * Constraints:
+     * <p>
+     * 1 <= nums.length <= 105
+     * -109 <= nums[i] <= 109
+     *
+     * @param nums
+     * @return eturn true if any value appears at least twice in the array, and return false if every element is distinct.
      */
 
     //Time Complexity = O(N), where N is the length of nums
