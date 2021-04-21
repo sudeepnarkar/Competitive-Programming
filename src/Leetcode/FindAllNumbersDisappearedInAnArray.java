@@ -1,31 +1,40 @@
-package Leetcode.NumberDisappearedInArray;
+package Leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author : Sudeep Narkar
- * @since : 10/23/2020, Thu, 7:08 AM
+ * @since : 4/20/21, Tue, 9:22 PM
  **/
 
-//https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array
-public class NumberDisappearedInArray {
-
+//https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+public class FindAllNumbersDisappearedInAnArray {
 
     /**
-     * Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+     * Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
      * <p>
-     * Find all the elements of [1, n] inclusive that do not appear in this array.
      * <p>
-     * Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
      * <p>
-     * Example:
+     * Example 1:
      * <p>
-     * Input:
-     * [4,3,2,7,8,2,3,1]
+     * Input: nums = [4,3,2,7,8,2,3,1]
+     * Output: [5,6]
+     * Example 2:
      * <p>
-     * Output:
-     * [5,6]
+     * Input: nums = [1,1]
+     * Output: [2]
+     * <p>
+     * <p>
+     * Constraints:
+     * <p>
+     * n == nums.length
+     * 1 <= n <= 105
+     * 1 <= nums[i] <= n
+     *
+     * @param nums
+     * @return  an array of all the integers in the range [1, n] that do not appear in nums.
+     *
      */
 
 
@@ -34,7 +43,6 @@ public class NumberDisappearedInArray {
     public List<Integer> findDisappearedNumbers(int[] nums) {
 
         List<Integer> list = new ArrayList<>();
-
         for (int i = 0; i < nums.length; i++) {
             int index = Math.abs(nums[i]) - 1;
             if (nums[index] > 0) {
