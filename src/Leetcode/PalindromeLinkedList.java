@@ -1,15 +1,14 @@
-package Leetcode.PalindromeLinkedList;
+package Leetcode;
 
 import java.util.Stack;
 
 /**
  * @author : Sudeep Narkar
- * @since : 11/10/2020, Tue, 6:55 AM
+ * @since : 4/24/21, Sat, 8:42 AM
  **/
 
-//https://leetcode.com/problems/palindrome-linked-list/
+//https://leetcode.com/problems/palindrome-linked-list
 public class PalindromeLinkedList {
-
 
     static class ListNode {
         int val;
@@ -35,6 +34,8 @@ public class PalindromeLinkedList {
      * Output: true
      */
 
+    //Time Complexity = O(N), where N is the length of the linked list
+    //Space Complexity = O(N), where N is the length of the linked list
     public static boolean isPalindrome(ListNode head) {
 
         Stack<ListNode> st = new Stack<>();
