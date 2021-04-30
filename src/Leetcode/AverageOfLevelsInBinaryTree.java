@@ -35,9 +35,11 @@ public class AverageOfLevelsInBinaryTree {
         }
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
+        double sum = 0;
+        double size = 0;
         while (q.size() != 0) {
-            double sum = 0;
-            double size = q.size();
+            sum = 0;
+            size = q.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = q.remove();
                 if (node.left != null) {
