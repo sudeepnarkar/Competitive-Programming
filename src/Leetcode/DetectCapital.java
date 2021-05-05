@@ -32,6 +32,8 @@ public class DetectCapital {
      */
 
 
+    //Time Complexity = O(N), where N is the length of word
+    //Space Complexity = O(1)
     public boolean detectCapitalUse(String word) {
         int caps = 0;
         for (char c : word.toCharArray()) {
